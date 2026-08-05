@@ -2,8 +2,6 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws_access_key')
-        AWS_SECRET_ACCESS_KEY = credentials('aws_secret_key')
         AWS_DEFAULT_REGION    = 'ap-south-1'
     }
     stages {
@@ -13,6 +11,13 @@ pipeline {
                     url: 'https://github.com/Yuvaraj9607/infra-pipeline.git'
             }
         }
+        stage('Terraform') {
+            steps {
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'aws-credentials'
+            }
+        }        
 
         stage('Terraform Init') {
             steps {
