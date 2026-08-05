@@ -15,8 +15,7 @@ variable "instance_type" {
 }
 variable "key_name" {
   type    = string
-  default = "Mum"
-}
+  default = "MuM"
 variable "tag_value" {
   type    = string
   default = "ubuntu"
