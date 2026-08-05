@@ -25,7 +25,4 @@ variable "tag_value" {
   default = "Terraform"
 }
 
-variable "bucket_name" {
-  type    = string
-  default = "terrabucket20006"
-}
+
